@@ -16,10 +16,11 @@ class RecordsController < ApplicationController
     end
   end
 
-
-  def wrong
+  def week
+    @records = Record.all
   end
 
-  def upload_success
-  end
+  def wrong; end
+
+  def upload_success; end
 end

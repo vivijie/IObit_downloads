@@ -25,6 +25,7 @@ PostitTemplate::Application.routes.draw do
 
 
   get '/cnet', to: 'nodes#index'
+  get '/week', to: 'records#week'
   # resources :categories, except: [:destroy] 
   resources :users, only: [:create, :edit, :show, :update]
   resources :macs, only: [:show]
