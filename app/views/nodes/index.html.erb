@@ -1,0 +1,25 @@
+<h3><%= Time.now.strftime("%m-%d") %>
+总下载: <%= @records.today_downloads %>
+</h3>
+<br/>
+<% @nodes.each do |node| %>
+  <%= node.name %>
+  <table class="table table-bordered">
+    <tr>
+      <%# <th>mac地址</th> %>
+      <th>主机名称</th>
+      <th>当天下载次数</th>
+    </tr>
+    <% node.macs.each do |mac| %>
+      <tr>
+        <%# <td><%= mac.mac_address %1></td> %>
+        <td>
+          <%= link_to mac_path(mac) do %>
+            <%= mac.name %>
+          <% end %>
+        </td>
+        <td><%= mac.mac_today_downloads %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

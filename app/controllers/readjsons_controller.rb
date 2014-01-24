@@ -1,0 +1,2 @@
+class ReadjsonsController < ApplicationController
+end

@@ -1,0 +1,29 @@
+<% @post.categories.each do |category| %>
+  <%= render 'categories/category', category: category %>
+<% end %>
+<br/>
+<p class="lead"><%= link_to @post.title, fix_url(@post.url) %></p>
+<%= @post.description %>
+<br/>
+
+<% if logged_in? and (current_user == @post.creator || current_user.admin?) %>
+  <p class='pull-right'>
+    <%= link_to 'Edit Post', edit_post_path(@post) %>
+  </p>
+<% end %>
+
+
+  <% if logged_in? %>
+    <%= form_for [@post, @comment] do |f| %>
+        <%= f.label :body, "Leave a comment" %>
+      <%= render 'shared/errors', obj: @comment %>
+      <%= f.text_area :body %>
+      <br/>
+      <%= f.submit :'Create Comment', class:"btn btn-primary" %>
+    <% end %>
+  <% end %>
+
+  <h5>Comments:</h5>
+  <% @post.reload.comments.sort_by{|x| x.total_votes}.reverse.each do |comment| %>
+    <%= render 'comments/comment', post: @post, comment: comment %>
+  <% end %>

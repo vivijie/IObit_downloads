@@ -1,0 +1,19 @@
+
+<h3><%= @mac.name %>
+当天下载: <%= @mac.mac_today_downloads %>
+</h3>
+<br/>
+  <table class="table table-bordered">
+    <tr>
+      <th>时间</th>
+      <th>下载次数</th>
+    </tr>
+    <% i = 1 %>
+    <% while i <=24 %>
+      <tr>
+        <td><%= @mac.time_range_to_admin(i) %></td>
+        <td><%= @mac.hour_downloads(i) %></td>
+      </tr>
+      <% i=i+1 %>
+    <% end %>
+  </table>
