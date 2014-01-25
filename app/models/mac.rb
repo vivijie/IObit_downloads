@@ -11,7 +11,7 @@ class Mac < ActiveRecord::Base
   end
 
   def time_range(time)
-    (Time.now.midnight + (time-9).hour)..(Time.now.midnight + (time-8).hour)
+    ((Time.now + 8.hour).midnight + (time-9).hour)..((Time.now + 8.hour).midnight + (time-8).hour)
   end
 
   def time_range_to_admin(time)

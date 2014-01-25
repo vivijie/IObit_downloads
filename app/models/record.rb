@@ -2,7 +2,7 @@ class Record < ActiveRecord::Base
   belongs_to :mac
 
   def self.today_downloads
-    self.where('created_at >= ? and created_at <= ?', (Time.now + 8.hour).beginning_of_day - 8.hour, (Time.now - 8.hour).end_of_day - 8.hour).sum("downloads")
+    self.where('created_at >= ? and created_at <= ?', (Time.now + 8.hour).beginning_of_day - 8.hour, (Time.now + 8.hour).end_of_day - 8.hour).sum("downloads")
   end
 
   # Count every day downloads at one week.
