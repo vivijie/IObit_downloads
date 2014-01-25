@@ -19,7 +19,7 @@ class Record < ActiveRecord::Base
   end
 
   def self.week_downloads
-  	self.where('created_at >= ? and created_at <= ?', Time.now.beginning_of_week, Time.now.end_of_week).sum("downloads")
+  	self.where('created_at >= ? and created_at <= ?', (Time.now - 8.hour).beginning_of_week, (Time.now - 8.hour).end_of_week).sum("downloads")
   end
 
 end
