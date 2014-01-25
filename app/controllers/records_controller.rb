@@ -4,7 +4,6 @@ class RecordsController < ApplicationController
 
   def create
     @mac = Mac.find_by mac_address: params["mac_address"]
-    binding.pry
     if !@mac.nil?
       new_record = Record.new
       new_record.mac_id = @mac.id 
