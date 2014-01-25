@@ -1,4 +1,4 @@
-<h3><%= Time.now.strftime("%m-%d") %>
+<h3><%= (Time.now + 8.hour).strftime("%m-%d") %>
 总下载: <%= @records.today_downloads %>
 </h3>
 <br/>
