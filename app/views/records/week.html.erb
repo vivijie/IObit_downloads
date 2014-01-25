@@ -10,7 +10,7 @@
     <% i = 1 %>
     <% while i <=7 %>
       <tr>
-        <td><%= @records.time_range_to_admin(i) %></td>
+        <td><%= @records.week_time_range_to_admin(i) %></td>
         <td><%= @records.day_downloads(i) %></td>
       </tr>
       <% i=i+1 %>
