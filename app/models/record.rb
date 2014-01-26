@@ -5,6 +5,10 @@ class Record < ActiveRecord::Base
     self.where('created_at >= ? and created_at <= ?', (Time.now + 8.hour).beginning_of_day - 8.hour, (Time.now + 8.hour).end_of_day - 8.hour).sum("downloads")
   end
 
+  def self.today_records
+    self.where('created_at >= ? and created_at <= ?', (Time.now + 8.hour).beginning_of_day - 8.hour, (Time.now + 8.hour).end_of_day - 8.hour)
+  end
+
   # Count every day downloads at one week.
   def self.day_downloads(time)
     self.where(created_at: self.time_range(time)).sum("downloads")

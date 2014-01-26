@@ -20,6 +20,10 @@ class RecordsController < ApplicationController
     @records = Record.all
   end
 
+  def index
+    @records = Record.today_records
+  end
+
   def wrong; end
 
   def upload_success; end

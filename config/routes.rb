@@ -29,4 +29,5 @@ PostitTemplate::Application.routes.draw do
   # resources :categories, except: [:destroy] 
   resources :users, only: [:create, :edit, :show, :update]
   resources :macs, only: [:show]
+  resources :records, only: [:index]
 end
