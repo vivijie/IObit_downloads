@@ -8,7 +8,7 @@
       <th>设备</th>
       <th>下载次数</th>
     </tr>
-    <% @records.each do |record| %>
+    <% @records.reverse_order.each do |record| %>
       <tr>
         <td><%= record.created_at.strftime("%T") %></td>
         <td><%= record.mac.name %></td>
