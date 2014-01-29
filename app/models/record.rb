@@ -1,4 +1,4 @@
-class Record < ActiveRecord::Base
+  class Record < ActiveRecord::Base
   belongs_to :mac
 
   def self.today_downloads
@@ -22,8 +22,8 @@ class Record < ActiveRecord::Base
     ((Time.now + 8.hour).beginning_of_week + (time-1).day).strftime("%b-%d-%A")
   end
 
-  def self.week_downloads
-  	self.where('created_at >= ? and created_at <= ?', (Time.now + 8.hour).beginning_of_week - 8.hour, (Time.now + 8.hour).end_of_week - 8.hour).sum("downloads")
+  def self.week_downloads(week)
+    self.where('created_at >= ? and created_at <= ?', (Time.now + 8.hour).beginning_of_week - 8.hour + week.week, (Time.now + 8.hour).end_of_week - 8.hour + week.week).sum("downloads")
   end
 
 end
