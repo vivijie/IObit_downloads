@@ -23,7 +23,7 @@
   end
 
   def self.week_downloads(week)
-    self.where('created_at >= ? and created_at <= ?', (Time.now + 8.hour).beginning_of_week - 8.hour + week.week, (Time.now + 8.hour).end_of_week - 8.hour + week.week).sum("downloads")
+    self.where('created_at >= ? and created_at <= ?', (Time.now + 8.hour).beginning_of_week - 8.hour - 1.day + week.week, (Time.now + 8.hour).end_of_week - 8.hour - 1.day + week.week).sum("downloads")
   end
 
 end
