@@ -8,12 +8,12 @@
       <th>下载次数</th>
     </tr>
     <% i = 0 %>
-    <% while i <=6 %>
-    <tr>
-      <td><%= @records.week_time_range_to_admin(i) %></td>
-      <td><%= @records.day_downloads(i) %></td>
-    </tr>
-    <% i=i+1 %>
+    <% while i <= 6 %>
+      <tr>
+        <td><%= @records.week_time_range_to_admin(i) %></td>
+        <td><%= @records.day_downloads(i) %></td>
+      </tr>
+      <% i=i+1 %>
     <% end %>
   </table>
 
@@ -27,7 +27,7 @@
       <th>下载次数</th>
     </tr>
     <% i = -7 %>
-    <% while i <=-1%>
+    <% while i <= -1 %>
       <tr>
         <td><%= @records.week_time_range_to_admin(i) %></td>
         <td><%= @records.day_downloads(i) %></td>

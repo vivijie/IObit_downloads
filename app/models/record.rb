@@ -15,15 +15,15 @@
   end
 
   def self.time_range(time)
-    ((Time.now - 8.hour).beginning_of_week + 8.hour + (time-1).day)..((Time.now - 8.hour).beginning_of_week + 8.hour + time.day)
+    ((Time.now + 8.hour).beginning_of_week - 8.hour + (time-1).day)..((Time.now + 8.hour).beginning_of_week - 8.hour + time.day)
   end
 
   def self.week_time_range_to_admin(time)
-    ((Time.now - 8.hour).beginning_of_week + (time-1).day).strftime("%b-%d-%A")
+    ((Time.now + 8.hour).beginning_of_week + (time-1).day).strftime("%b-%d-%A")
   end
 
   def self.week_downloads(week)
-    self.where('created_at >= ? and created_at <= ?', (Time.now - 8.hour).beginning_of_week + 8.hour + week.week, (Time.now - 8.hour).end_of_week + 8.hour + week.week).sum("downloads")
+    self.where('created_at >= ? and created_at <= ?', (Time.now + 8.hour).beginning_of_week - 8.hour + week.week, (Time.now + 8.hour).end_of_week - 8.hour + week.week).sum("downloads")
   end
 
 end
