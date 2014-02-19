@@ -10,7 +10,8 @@
     </tr>
     <% @records.reverse_order.each do |record| %>
       <tr>
-        <td><%= record.created_at.strftime("%T") %></td>
+        <td><%= record.created_at.to_formatted_s(:time) %></td>
+        <%# <td><%= record.created_at.strftime("%T") %1></td> %>
         <td><%= record.mac.name %></td>
         <td><%= record.downloads %></td>
       </tr>
