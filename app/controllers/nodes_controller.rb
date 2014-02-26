@@ -3,6 +3,7 @@ class NodesController < ApplicationController
 
   def index
     @nodes = Node.all
-    @records = Record.all
+    @records = Record.all.sort_by{|x| x.downloads}
+    @today_downloads = Record.today_downloads
   end
 end

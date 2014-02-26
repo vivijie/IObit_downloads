@@ -28,6 +28,6 @@ PostitTemplate::Application.routes.draw do
   get '/week', to: 'records#week'
   # resources :categories, except: [:destroy] 
   resources :users, only: [:edit, :show, :update]
-  resources :macs, only: [:show]
+  resources :macs, only: [:show, :new, :create]
   resources :records, only: [:index]
 end

@@ -10,6 +10,8 @@ gem 'bcrypt-ruby', '~>3.0.0'
 gem 'voteable_neil', '= 0.0.0'
 gem 'sluggable_neil', '= 0.0.0'
 gem 'twilio-ruby'
+gem 'bootstrap_form'
+gem 'haml-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
