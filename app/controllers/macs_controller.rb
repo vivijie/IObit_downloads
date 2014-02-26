@@ -19,6 +19,20 @@ class MacsController < ApplicationController
     end
   end
 
+  def edit
+    @mac = Mac.find(params[:id])
+  end
+
+  def update
+    @mac = Mac.find(params[:id])
+    if @mac.update(mac_params)
+      flash[:notice] = "This Mac updated."
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   private
   def mac_params
     params.require(:mac).permit!

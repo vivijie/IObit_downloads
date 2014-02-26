@@ -2,8 +2,8 @@ class Mac < ActiveRecord::Base
   has_many :records
   belongs_to :node
 
-  validates :mac_address, uniqueness: true
-
+  validates :name, :mac_address, presence: true
+  validates_uniqueness_of :mac_address
   def hour_downloads(time)
     self.records.where(created_at: self.time_range(time)).sum("downloads")
   end

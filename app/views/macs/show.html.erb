@@ -1,5 +1,6 @@
 <h3><%= @mac.name %></h3> 
 <%= @mac.mac_address %>
+<%= link_to "Edit", edit_mac_path(@mac) %>
 <h3>
   当天下载: <%= @mac.mac_today_downloads %>
 </h3>

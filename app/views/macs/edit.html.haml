@@ -1,0 +1,13 @@
+%section
+  .row
+    .col-sm-10.col-sm-offset-1
+      = bootstrap_form_for @mac, html: { class: "form-horizontal"} do |f|
+        %header
+          %h1 Add New Mac
+        %fieldset
+          .form-group
+            .col-sm-4
+              = f.text_field :name, label: "Mac's user"
+              = f.text_field :mac_address, label: "Mac Address"
+              = f.collection_select(:node_id, Node.all, :id, :name)
+              = f.submit(@mac.new_record? ? 'Add New Mac' : 'Update Mac', class: 'btn btn-success')
