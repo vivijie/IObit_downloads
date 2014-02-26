@@ -9,12 +9,12 @@ class MacsController < ApplicationController
   end
  
   def create 
-    # binding.pry
     @mac = Mac.new(mac_params)
     if @mac.save
       flash[:notice] = "New Mac was created."
       redirect_to root_path
     else
+      flash.now[:errors] = "This Mac has been added!"
       render :new
     end
   end

@@ -9,7 +9,6 @@
             .col-sm-4
               = f.text_field :name, label: "Mac's user"
               = f.text_field :mac_address, label: "Mac Address"
-              = f.collection_check_boxes :node_id, Node.all, :id, :name do |node|
-                = node.label(class: "checkbox inline") { node.check_box(class: "checkbox") + node.text }
+              = f.collection_select(:node_id, Node.all, :id, :name)
               %p
-              %input(type="submit" value="Add New Mac" class="btn btn-default")
+              %input(type="submit" value="Add New Mac" class="btn btn-success")
