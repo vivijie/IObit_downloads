@@ -2,6 +2,8 @@ PostitTemplate::Application.routes.draw do
   root to: 'nodes#index'
 
   # get '/register', to: 'users#new'
+  get 'clean_database', to: 'records#clean_database'
+  get 'clean_database_a_month_ago', to: 'records#clean_database_a_month_ago'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'

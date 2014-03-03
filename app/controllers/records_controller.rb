@@ -17,6 +17,15 @@ class RecordsController < ApplicationController
     end
   end
 
+  def clean_database
+    @records_now = Record.all.size
+  end
+
+  def clean_database_a_month_ago
+    Record.clean_database_a_month_ago
+    redirect_to clean_database_path
+  end
+
   def week
     @records = Record.all
   end

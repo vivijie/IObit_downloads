@@ -26,4 +26,8 @@
     self.where('created_at >= ? and created_at <= ?', (Time.now + 8.hour).beginning_of_week - 8.hour - 1.day + week.week, (Time.now + 8.hour).end_of_week - 8.hour - 1.day + week.week).sum("downloads")
   end
 
+  
+  def self.clean_database_a_month_ago
+    self.where('created_at <= ?', Time.now - 1.month).delete_all
+  end
 end
