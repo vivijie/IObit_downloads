@@ -9,6 +9,8 @@
       <%# <th>mac地址</th> %>
       <th>主机名称</th>
       <th>当天下载次数</th>
+      <th>昨天下载次数</th>
+      <th>前天下载次数</th>
     </tr>
     <% node.macs.each do |mac| %>
       <tr>
@@ -18,7 +20,9 @@
             <%= mac.name %>
           <% end %>
         </td>
-        <td><%= mac.mac_today_downloads %></td>
+        <td><%= mac.mac_today_downloads(0) %></td>
+        <td><%= mac.mac_today_downloads(1) %></td>
+        <td><%= mac.mac_today_downloads(2) %></td>
       </tr>
     <% end %>
   </table>
