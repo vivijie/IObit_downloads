@@ -73,3 +73,23 @@
       <% i=i+1 %>
     <% end %>
   </table>
+
+  
+<h3>
+ 四周前下载: <%= @records.week_downloads(-4) %>
+</h3>
+<br/>
+  <table class="table table-bordered">
+    <tr>
+      <th>日期</th>
+      <th>下载次数</th>
+    </tr>
+    <% i = -28 %>
+    <% while i <= -22 %>
+      <tr>
+        <td><%= @records.week_time_range_to_admin(i) %></td>
+        <td><%= @records.day_downloads(i) %></td>
+      </tr>
+      <% i=i+1 %>
+    <% end %>
+  </table>
