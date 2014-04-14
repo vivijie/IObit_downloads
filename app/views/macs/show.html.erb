@@ -2,7 +2,7 @@
 <%= @mac.mac_address %>
 <%= link_to "Edit", edit_mac_path(@mac) %>
 <h3>
-  当天下载: <%= @mac.mac_today_downloads %>
+  当天下载: <%= @mac.mac_today_downloads(0) %>
 </h3>
 <br/>
   <table class="table table-bordered">
