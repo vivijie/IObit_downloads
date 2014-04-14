@@ -13,6 +13,8 @@
       <th>2天前下载次数</th>
       <th>3天前下载次数</th>
       <th>4天前下载次数</th>
+      <th>5天前下载次数</th>
+      <th>6天前下载次数</th>
     </tr>
     <% node.macs.each do |mac| %>
       <tr>
@@ -27,6 +29,8 @@
         <td><%= mac.mac_today_downloads(2) %></td>
         <td><%= mac.mac_today_downloads(3) %></td>
         <td><%= mac.mac_today_downloads(4) %></td>
+        <td><%= mac.mac_today_downloads(5) %></td>
+        <td><%= mac.mac_today_downloads(6) %></td>
       </tr>
     <% end %>
   </table>
