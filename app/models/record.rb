@@ -22,6 +22,10 @@
     ((Time.now + 8.hour).beginning_of_week + (time-1).day).strftime("%b-%d-%A")
   end
 
+  def self.week_time(time)
+    (Time.now + 8.hour - time.day).strftime("%b-%d-%A")
+  end
+
   def self.week_downloads(week)
     self.where('created_at >= ? and created_at <= ?', (Time.now + 8.hour).beginning_of_week - 8.hour - 1.day + week.week, (Time.now + 8.hour).end_of_week - 8.hour - 1.day + week.week).sum("downloads")
   end

@@ -8,10 +8,10 @@
     <tr>
       <%# <th>mac地址</th> %>
       <th>主机名称</th>
-      <th>当天下载</th>
+      <th>Today</th>
       <% i = 0 %>
       <% while i <= 5 %>
-        <th><%= i + 1 %>天前下载</th>
+        <th><%= @records.week_time(i)  %></th>
         <% i = i + 1 %>
       <% end %>
     </tr>
