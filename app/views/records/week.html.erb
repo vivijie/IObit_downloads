@@ -18,7 +18,7 @@
   </table>
 
 <h3>
-上周下载: <%= @records.week_downloads(-1) %>
+一周前下载: <%= @records.week_downloads(-1) %>
 </h3>
 <br/>
   <table class="table table-bordered">
@@ -28,6 +28,44 @@
     </tr>
     <% i = -7 %>
     <% while i <= -1 %>
+      <tr>
+        <td><%= @records.week_time_range_to_admin(i) %></td>
+        <td><%= @records.day_downloads(i) %></td>
+      </tr>
+      <% i=i+1 %>
+    <% end %>
+  </table>
+
+<h3>
+ 两周前下载: <%= @records.week_downloads(-2) %>
+</h3>
+<br/>
+  <table class="table table-bordered">
+    <tr>
+      <th>日期</th>
+      <th>下载次数</th>
+    </tr>
+    <% i = -14 %>
+    <% while i <= -8 %>
+      <tr>
+        <td><%= @records.week_time_range_to_admin(i) %></td>
+        <td><%= @records.day_downloads(i) %></td>
+      </tr>
+      <% i=i+1 %>
+    <% end %>
+  </table>
+
+<h3>
+ 三周前下载: <%= @records.week_downloads(-3) %>
+</h3>
+<br/>
+  <table class="table table-bordered">
+    <tr>
+      <th>日期</th>
+      <th>下载次数</th>
+    </tr>
+    <% i = -21 %>
+    <% while i <= -15 %>
       <tr>
         <td><%= @records.week_time_range_to_admin(i) %></td>
         <td><%= @records.day_downloads(i) %></td>
