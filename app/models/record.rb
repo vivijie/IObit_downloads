@@ -23,7 +23,7 @@
   end
 
   def self.week_time(time)
-    (Time.now + 8.hour - time.day).strftime("%b-%d-%A")
+    (Time.now + 8.hour - time.day).strftime("%b-%d")
   end
 
   def self.week_downloads(week)

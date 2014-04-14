@@ -9,8 +9,8 @@
       <%# <th>mac地址</th> %>
       <th>主机名称</th>
       <th>Today</th>
-      <% i = 0 %>
-      <% while i <= 5 %>
+      <% i = 1 %>
+      <% while i <= 6 %>
         <th><%= @records.week_time(i)  %></th>
         <% i = i + 1 %>
       <% end %>
@@ -34,3 +34,4 @@
     <% end %>
   </table>
 <% end %>
+      <% i = 0 %>
