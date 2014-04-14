@@ -8,8 +8,8 @@ class Mac < ActiveRecord::Base
     self.records.where(created_at: self.time_range(time)).sum("downloads")
   end
 
-  def mac_today_downloads
-    self.records.where('created_at >= ? and created_at <= ?', (Time.now + 8.hour).beginning_of_day - 8.hour, (Time.now + 8.hour).end_of_day - 8.hour).sum("downloads")
+  def mac_today_downloads(days_ago)
+    self.records.where('created_at >= ? and created_at <= ?', (Time.now - days_ago.day + 8.hour).beginning_of_day - 8.hour, (Time.now - days_ago.day + 8.hour).end_of_day - 8.hour).sum("downloads")
   end
 
   def time_range(time)
