@@ -9,8 +9,11 @@
       <%# <th>mac地址</th> %>
       <th>主机名称</th>
       <th>当天下载次数</th>
-      <th>昨天下载次数</th>
-      <th>前天下载次数</th>
+      <th>1天前下载次数</th>
+      <th>2天前下载次数</th>
+      <th>3天前下载次数</th>
+      <th>4天前下载次数</th>
+      <th>5天前下载次数</th>
     </tr>
     <% node.macs.each do |mac| %>
       <tr>
@@ -23,6 +26,8 @@
         <td><%= mac.mac_today_downloads(0) %></td>
         <td><%= mac.mac_today_downloads(1) %></td>
         <td><%= mac.mac_today_downloads(2) %></td>
+        <td><%= mac.mac_today_downloads(3) %></td>
+        <td><%= mac.mac_today_downloads(4) %></td>
       </tr>
     <% end %>
   </table>
